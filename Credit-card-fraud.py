@@ -797,7 +797,7 @@ print("Accuracy Score: ", accuracy_score(y_test, pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, pred))
 print("Classification Report:\n", classification_report(y_test, pred))
 
-Random forest , Decision tree and Gradient boosting have definitely the best performance from all models we've tried. All I did was scaling features. Our dataset is under extreme class imbalance so we must do something.
+# Random forest , Decision tree and Gradient boosting have definitely the best performance from all models we've tried. All I did was scaling features. Our dataset is under extreme class imbalance so we must do something.
 
 val_predictions = model.predict(X_test)
 print(val_predictions)
