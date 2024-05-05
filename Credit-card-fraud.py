@@ -121,9 +121,9 @@ df.used_pin_number.value_counts(1).plot.barh()
 
 df.online_order.value_counts(1).plot.barh()
 
-TARGET ANALYSIS
+#TARGET ANALYSIS
 
-Now, let's exam our target, the FRAUD column. We are going to try to understand which variables are related to customer churn. This information is very useful, because we can use it to predict fraud transactions.
+#Now, let's exam our target, the FRAUD column. We are going to try to understand which variables are related to customer churn. This information is very useful, because we can use it to predict fraud transactions.
 
  df.fraud.value_counts(1).plot.bar()
  plt.title('Fraud Distribution', size = 18)
@@ -132,7 +132,7 @@ Now, let's exam our target, the FRAUD column. We are going to try to understand 
  plt.ylim(0, 0.88)
  plt.text(1.6, 0.05, "We have a highly imbalanced dataset!", color='r')
 
-The main challenge in fraud detection is the extreme class imbalance in the data which makes it difficult for many classification algorithms to effectively separate the two classes. Only 0.087% of transactions are labeled as fradulent in this dataset.
+#The main challenge in fraud detection is the extreme class imbalance in the data which makes it difficult for many classification algorithms to effectively separate the two classes. Only 0.087% of transactions are labeled as fradulent in this dataset.
 
 # Drawing a pie plot to display the distribution of each categorical column
 plt.figure(figsize = (16, 12))
@@ -144,7 +144,7 @@ for i, col in enumerate(Columns_binary):
     plt.xlabel(col, weight = 'bold')
 plt.show()
 
-Binary features VS Target feature FRAUD:
+#Binary features VS Target feature FRAUD:
 
 fig, axes = plt.subplots(2, 2, figsize=(16, 8))
 _ = sns.countplot(data=df, x='repeat_retailer', hue='fraud', ax=axes[0][0])
@@ -153,7 +153,7 @@ _ = sns.countplot(data=df, x='used_pin_number', hue='fraud', ax=axes[1][0])
 _ = sns.countplot(data=df, x='online_order', hue='fraud', ax=axes[1][1])
 _ = plt.tight_layout()
 
-It looks like 'online_order' is the most common types of fraud. It actually makes sense cause if the website you're shopping online is fraudulent (the website was hacked, etc) your card number will be exposed on Internet. Let's take a closer look at this probability:
+#It looks like 'online_order' is the most common types of fraud. It actually makes sense cause if the website you're shopping online is fraudulent (the website was hacked, etc) your card number will be exposed on Internet. Let's take a closer look at this probability:
 
 plt.figure(figsize = (15,12))
 
