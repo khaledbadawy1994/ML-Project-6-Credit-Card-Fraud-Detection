@@ -125,7 +125,7 @@ df.online_order.value_counts(1).plot.barh()
 
 #Now, let's exam our target, the FRAUD column. We are going to try to understand which variables are related to customer churn. This information is very useful, because we can use it to predict fraud transactions.
 
- df.fraud.value_counts(1).plot.bar()
+ df.fraud.value_counts(1).plot.barh()
  plt.title('Fraud Distribution', size = 18)
  plt.text(-0.1, 0.815, df.fraud.value_counts(1)[0])
  plt.text(0.9, 0.22, df.fraud.value_counts(1)[1])
