@@ -11,13 +11,13 @@ from sklearn.model_selection import cross_val_score
 from sklearn import metrics
 from collections import Counter
 
-Read Dataset
+#Read Dataset
 
 import pandas as pd
 df = pd.read_csv("/content/drive/MyDrive/card_transdata.csv", on_bad_lines="skip")
 df
 
-Count Number of Fraud and Non-fraud Records
+#Count Number of Fraud and Non-fraud Records
 
 fraud_count = df['fraud'].value_counts()[1]
 nonfraud_count = df['fraud'].value_counts()[0]
@@ -25,24 +25,24 @@ nonfraud_count = df['fraud'].value_counts()[0]
 print(f"Number of Fraud Records: {fraud_count}")
 print(f"Number of Non-Fraud Records: {nonfraud_count}")
 
-Determine the count of null values
+#Determine the count of null values
 
 total_null_values = df.isna().sum()
 print("Total Null Values:", total_null_values)
 
-Determine the count of duplicate records
+#Determine the count of duplicate records
 
 total_duplicates = df.duplicated().sum()
 print("Total Duplicates:", total_duplicates)
 
-Drop duplicate records
+#Drop duplicate records
 
 df.drop_duplicates(inplace=True)
 print(df)
 
 df
 
-Descriptive Statistics
+#Descriptive Statistics
 
 description=df.describe()
 print(description)
@@ -54,7 +54,7 @@ df.drop('fraud', axis=1).hist(figsize=(10, 8), bins=20)
 plt.suptitle('Distribution of Numerical Features')
 plt.show()
 
-Count of Fraud/Non-Fraud Records
+#Count of Fraud/Non-Fraud Records
 
 import matplotlib.pyplot as plt
 
@@ -77,9 +77,9 @@ df['fraud'].value_counts()
 # Create a Pie Chart
 df['fraud'].value_counts().plot.pie(autopct='%1.1f%%')
 
-The class distribution of the 'fraud' target variable is unbalanced, and it will be necessary to implement balancing techniques to ensure accurate classification.
+#The class distribution of the 'fraud' target variable is unbalanced, and it will be necessary to implement balancing techniques to ensure accurate classification.
 
-Variable selection
+#Variable selection
 
 df
 
